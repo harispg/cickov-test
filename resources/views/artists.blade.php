@@ -94,14 +94,14 @@
   });
     $(document).ready(function(){
       $(".tblsort").click(function(){
+
         var sortby = $(this).data("type");
         $.ajax({
           type: "post",
           url: "/ajaxData",
           data: {ajaxSort: sortby},
           success: function(usersNew){
-
-            renderUserTable(usersNew.data);
+          renderUserTable(usersNew.data);
           }
         });
         });
