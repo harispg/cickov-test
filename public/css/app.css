@@ -1,0 +1,37 @@
+nav {
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navigation {
+
+  background-color: gray;
+}
+
+.navigation a {
+  display: inline-block;
+  color: ivory;
+  text-decoration: none;
+  background-color: #486;
+  position: relative;
+}
+
+.navigation a:hover {
+  background-color: #599;
+}
+
+.content {
+  position: relative;
+  margin: 0 auto;
+}
+
+#spanArtRegister {
+  position: relative;
+  bottom: 0rem;
+  left: 10rem;
+  background-color: yellow;
+  color: red;
+  display: block;
+  visibility: hidden;
+}
