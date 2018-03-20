@@ -14,23 +14,12 @@ use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', function () {return view('home');})->name('home');
 
 
-Route::get('/artists', function(){
-  $users = User::orderBy('email')->paginate(5);
-  return view('artists')->with(compact('users'));
-            });
+Route::get('/artists', 'UsersController@show');
 
-Route::post('/ajaxData', function(){
-if(Request::ajax())
-  {
-    $users = User::orderBy($_POST['ajaxSort'])->paginate(5);
-    return $users;
-  }
-});
+Route::post('/ajaxData', 'AjaxRequestsController@sortByClick');
 
 Route::get('/edit', 'RegistrationController@change');
 Route::post('/edit/{user}', 'RegistrationController@edit');
