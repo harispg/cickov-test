@@ -11,6 +11,7 @@ class RegistrationController extends Controller
 {
   public function __construct(){
     $this->middleware('guest')->except('change', 'edit');
+    $this->middleware('auth')->only('change');
   }
   public function create()
   {
