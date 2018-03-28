@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class CanEdit
+class rolesMiddleware
 {
     /**
      * Handle an incoming request.
@@ -13,9 +13,9 @@ class CanEdit
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $role)
     {
-      if(auth()->user()->name!='Haris Vodopic')
+      if(!auth()->user()->hasRole($role))
       {
         return redirect('/');
       }

@@ -60,13 +60,6 @@ class RegistrationController extends Controller
       'email' => 'required|email|unique:users,email,'.$user
     ]);
 
-
-    /*Validator::make(request('email'), [
-    'email' => [                                  // ovaj kurac ne radi nesto, veli trying to get property of non-object
-        'required',
-        Rule::unique('users')->ignore($user->id)
-    ]]);*/
-
     $user = User::find($user);
     $user->name = request('name');
     $user->email = request('email');
